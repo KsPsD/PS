@@ -1,0 +1,78 @@
+#include<stdio.h>			
+int main(){
+	int i,x,s_a =0 ,s_b=0;
+
+	//ifstream in("input.txt");
+	
+	
+
+	int a[10];
+	int b[10];
+	char r[10];
+	for (i = 0; i < 10; i++)
+	{
+		cin >> a[i];
+	}
+
+	for (i = 0; i < 10; i++)
+	{
+		cin >> b[i];
+	}
+
+	for (i = 0; i < 10; i++)
+	{
+		if (a[i] == b[i]) {
+			s_a++;
+			s_b++;
+			r[i] = 'D';
+		}
+		else if (a[i] > b[i]) { 
+			s_a += 3;
+			r[i] = 'A';
+		}
+		else {
+			s_b += 3;
+			r[i] = 'B';
+
+		}
+
+	}
+
+	if (s_a == s_b) {
+		int j = 9;
+		while (a[j]==b[j])
+		{
+			j--;
+			if (j <0) {
+				cout << s_a << " " << s_b << endl;
+				cout << "D" << endl;
+				return 0;
+			}
+		}
+
+		if (a[j] > b[j]) {
+			cout << s_a << " " << s_b << endl;
+			cout << "A" << endl;
+
+		}
+		else if(a[j] < b[j]){
+			cout << s_a << " " << s_b << endl;
+			cout << "B" << endl;
+
+		}
+		
+	}
+	else if (s_a > s_b) {
+		cout << s_a << " " << s_b << endl;
+		cout <<"A" << endl;
+	}
+	else{
+	
+		cout << s_a << " " << s_b << endl;
+		cout << "B" << endl;
+
+	}
+
+
+	return 0;
+}

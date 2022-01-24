@@ -1,0 +1,26 @@
+#include<stdio.h>
+using namespace std;
+int main(){
+	char origin[100];
+	char sent[100];
+	int i, a = 0;
+	
+	cin.getline(origin , 100,'\n');
+
+
+	for (i = 0; origin[i] != '\0'; i++)
+	{
+		if (origin[i] != 32)
+		{
+			sent[a] = tolower(origin[i]);
+			a++;
+		}
+	}
+
+	sent[a] = '\0';
+
+	cout << sent << endl;
+
+	return 0;
+}
+	

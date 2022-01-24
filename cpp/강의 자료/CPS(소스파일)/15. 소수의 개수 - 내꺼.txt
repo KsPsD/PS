@@ -1,0 +1,25 @@
+#include<stdio.h>			
+int main(){
+	int arr [500001];
+int main(){
+
+	int i, j, n = 0;
+	int cnt = 0;
+	cin >> n;
+	for (i = 1; i <= n; i++) {
+		for (j = i; j <= n; j = j + i)
+		{
+			arr[j]++;
+		}
+	}
+
+	for (i = 1; i <= n; i++)
+	{
+		if (arr[i] == 2) cnt++;
+	}
+
+	cout << cnt << endl;
+
+	return 0;
+
+}

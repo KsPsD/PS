@@ -1,0 +1,29 @@
+import sys
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+MAX = 10001
+dp = [[sys.maxsize]*150 for i in range(MAX)]
+ch = [0 for _ in range(MAX)]
+flag = False
+for i in range(M):
+    idx = int(input())
+    ch[idx] = 1
+
+
+def go(cur, len):
+    if len <= 0 or len >= 150 or cur < 0 or ch[cur]:
+        return sys.maxsize
+    if dp[cur][len] != sys.maxsize:
+        return dp[cur][len]
+    dp[cur][len] = min(go(cur-len, len), go(cur-len, len+1),
+                       go(cur-len, len-1)) + 1
+    return dp[cur][len]
+
+
+dp[2][1] = 1
+ans = sys.maxsize
+for i in range(1, 150):
+    ans = min(ans, go(N, i))
+
+print(ans)

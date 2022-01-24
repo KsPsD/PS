@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(){
+	int seven=0;
+	int born = 0;
+	char gender ='a';
+	char number[30];
+	
+
+	scanf("%s", number);
+
+	//cout << pre;
+	
+
+	seven = (number[7]-48);
+	switch (seven) {
+	case 1:
+		born = 1900 + ((number[0] - 48) * 10 + (number[1] - 48));
+		gender = 'M';
+		break;
+	case 2:
+		born = 1900 + ((number[0] - 48) * 10 + (number[1] - 48));
+
+		gender = 'W';
+		break;
+	case 3:
+		born = 2000 + ((number[0] - 48) * 10 + (number[1] - 48));
+
+		gender = 'M';
+		break;
+	case 4:
+		born = 2000 + ((number[0] - 48) * 10 + (number[1] - 48));
+		gender = 'W';
+		break;
+	default:
+		printf("이 세상에 존재 하지 않습니다");
+	}
+
+	cout << 2019-born+1 <<" "<< gender << endl;
+	return 0;
+}

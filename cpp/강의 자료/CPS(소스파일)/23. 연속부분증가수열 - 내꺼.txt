@@ -1,0 +1,33 @@
+#include<stdio.h>			
+int main(){
+	int i, n, input;
+	int max=0, cnt=0;
+	int m_cnt =0;
+	vector<int> vec;
+	cin >> n;
+	for (i = 0; i < n; i++)
+	{
+		int in;
+		cin >> in;
+		vec.push_back(in);
+	}
+
+	
+	for (i = 0; i < n; i++)
+	{
+		if (vec[i] >=max) {
+			max = vec[i];
+			cnt++;
+			if (m_cnt < cnt) m_cnt = cnt;
+		}
+		
+		else {
+			max = vec[i];
+			cnt = 1;
+		}
+	}
+
+		cout << m_cnt << endl;
+
+	return 0;
+}

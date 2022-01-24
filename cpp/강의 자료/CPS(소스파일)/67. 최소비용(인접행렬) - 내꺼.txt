@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int map[30][30], ch[30], n, cost=2147000000;	
+
+int ch[30];
+int n;
+int m;
+int map[30][30];
+int minn =999;
+int len =0;
+
+
+int cnt = 0;
+void D(int x ) {
+	int i;
+	if (x==n) {
+		if (len < minn) minn = len;
+	}
+	else {
+		for (i = 1; i <= n; i++) {
+			{
+				if (map[x][i]> 0 && ch[i] == 0) {
+					ch[i] = 1;
+					len += map[x][i];
+					D(i);
+					ch[i] = 0;
+					len -= map[x][i];
+
+				}
+			}
+
+		}
+	}
+}
+
+
+int main(){
+
+	
+	int i, j, b, a, c;
+	cin >> n >> m;
+	for (i = 1; i <= m; i++) {
+		cin >> a >> b >>c;
+		map[a][b] = c;
+	}
+	ch[1] = 1;
+
+	D(1);
+
+	cout << minn << endl;
+
+	return 0;
+
+}

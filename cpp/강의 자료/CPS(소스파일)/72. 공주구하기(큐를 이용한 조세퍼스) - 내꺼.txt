@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<vector>
+#include<queue>
+#include<algorithm>
+using namespace std;
+int main(){
+	int  i, n, k, p = 1;
+	int x;
+	int cnt = 0;
+	queue<int> Q;
+
+	cin >> n >> k;
+
+
+	for (i = 1; i <= n; i++) {
+		Q.push(i);
+	}
+
+	while (!Q.empty()) {
+		x = Q.front();
+		Q.pop();
+		cnt++;
+		if (cnt == k) {
+			cnt = 0;
+		} 
+		else {
+			Q.push(x);
+		}
+
+
+	}
+
+	cout << x << endl;
+
+	return 0;
+}
+
+
+
+
+

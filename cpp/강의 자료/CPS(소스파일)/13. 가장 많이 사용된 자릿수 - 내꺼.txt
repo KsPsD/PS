@@ -1,0 +1,74 @@
+
+#include<stdio.h>
+int ch[10];
+int main(){
+	int check[10]{ 0 };  // --> 이렇게 하면 전역변수가 아니여서 메모리에 안올라간 상태 인것 같음
+
+	char n[101];
+	int i  ,a = 0, b = 0;
+	int max = 0;
+	cin >> n;
+
+
+	for (i = 0; n[i] != '\0'; i++)
+	{
+		switch (n[i])
+		{
+		case 48:
+			check[0]++;
+			break;
+		case 49:
+			check[1]++;
+			break;
+		case 50:
+			check[2]++;
+			break;
+		case 51:
+			check[3]++;
+			break;
+		case 52:
+			check[4]++;
+			break;
+		case 53:
+			check[5]++;
+			break;
+		case 54:
+			check[6]++;
+			break;
+		case 55:
+			check[7]++;
+			break;
+		case 56:
+			check[8]++;
+			break;
+		case 57:
+			check[9]++;
+			break;
+		}
+	}
+
+	
+
+	for (i = 0; i < 10; i++)
+	{
+		if (check[i] > max) { 
+			max = check[i];
+			b = i;
+		}
+
+		else if (check[i] == max) {
+			if (i > b) b = i;
+		}
+
+	}
+
+	cout << b << endl;
+	
+
+
+	return 0;
+}
+
+
+
+

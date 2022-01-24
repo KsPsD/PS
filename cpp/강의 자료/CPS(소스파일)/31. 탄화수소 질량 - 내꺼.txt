@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main(){
+	
+	int i;
+	string s;
+	int a=0, b=0;
+	
+	bool f = false;
+	cin >> s;
+	for (i = 0; i < s.length(); i++)
+	{
+		if (s[i] == 'C') {
+			f = true;
+		}
+		else if (s[i] == 'H') {
+			f = false;
+		}
+
+		if (s[i] != 'C' && f) {
+		a = (a * 10) + (s[i]-48);
+		}
+
+		else if (s[i] != 'H' && !f) {
+			b = (b * 10) + (s[i]-48); 
+			
+
+		}
+
+
+
+	}
+	if (a == 0) a = 1;
+	if (b == 0) b = 1;
+	cout << (a * 12) + (b * 1) << endl;
+	
+	return 0;
+
+}
