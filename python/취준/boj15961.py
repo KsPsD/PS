@@ -35,18 +35,18 @@ for k, v in enumerate(numbers):
 print(answer)
 
 
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
-def initResult():
-    res = 0
+# def initResult():
+#     res = 0
 
-    for num in nums[:k]:
-        if cache[num]  == 0:
-            res += 1
-        cache[num] += 1
+#     for num in nums[:k]:
+#         if cache[num]  == 0:
+#             res += 1
+#         cache[num] += 1
 
-    return res
+#     return res
 
 
 # def slide():
