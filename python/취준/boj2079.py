@@ -30,6 +30,8 @@ paline()
 for i in range(1,size):
     for j in range(1,i+1):
         if dp[i][j] :
-            if res[i] ==0 or res[i] > res[j-1] +1:
+            if res[i] ==0 or res[i] > res[j-1] +1: #j부터 i까지 펠린드롬이니까 그전꺼에 +1 하면됨
                 res[i] = res[j-1] +1
+
+
 print(res[len(s) -1])
